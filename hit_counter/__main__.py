@@ -1,6 +1,6 @@
 import logging
 import sys
-from argparse import Namespace, ArgumentParser, RawTextHelpFormatter
+import time
 from flask import Flask
 import redis
 
@@ -27,8 +27,10 @@ def configure_logger(name: str) -> logging.Logger:
 
 @app.route("/")
 def hit_counter() -> str:
+    start_time = time.perf_counter()
     hit_count = rd.incr("counter")
-    logger.debug("Hit!, count is %s", hit_count)
+    logger.debug("Hit!, count is %s. Wow!!! Redis is ⚡ fast - the set / get method took %f seconds.",
+                 hit_count, (time.perf_counter() - start_time))
     return f"<p>Hit count is {hit_count}</p>"
 
 
