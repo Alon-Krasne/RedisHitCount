@@ -22,3 +22,4 @@ using the [tenacity](https://pypi.org/project/tenacity/) package.
 * The Redis DB should be persisted to disk, we can do this using the `volumes` option in the docker compose.
 * This is a small project so there are no tests for the code, but in order to extend it we should introduce some tests.
 * I was using `Flask` for this backend, but generally I prefer [FastAPI](https://fastapi.tiangolo.com/) for Backend implementations.
+* Make this project configurable, either using a `.env`, environment variables or even a config file that can be injected.
