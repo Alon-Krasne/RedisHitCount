@@ -16,6 +16,7 @@ To run the project, run the following commands:
 
 ## Improvements
 Improvements that can extend this project to be more production-ready
+* The built containers can be saved to a Doker repository, such as **DockerHub** or **ECR** (on AWS)
 * Currently the Redis instance is not configured, it should be configured according to the needs of the project.
 * Retry mechanism in the case of Redis connection failure. Can be achieved (in Python) 
 using the [tenacity](https://pypi.org/project/tenacity/) package.
